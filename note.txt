@@ -1,0 +1,56 @@
+import "./navbar.css";
+
+import { FC } from 'react';
+import logo from '@/assets/images/logo.png';
+import Link from 'next/link';
+import { NAVIGATION_DATA } from '@/static/nav.static';
+import Image from 'next/image';
+import { Palette } from 'lucide-react';
+
+interface NavbarProps {
+  className?: string;
+}
+
+const Navbar: FC<NavbarProps> = () => {
+  return (
+    <nav>
+      <div className="container nav__container">
+        <Link href='/' >
+          <Image src={logo} alt='logo' className='w-10 rounded-full overflow-hidden' />
+        </Link>
+        <ul className='flex gap-3.5'>
+          {NAVIGATION_DATA.map(item => (
+            <li key={item.id}>
+   
+              <Link
+                href={item.href}
+               
+              >
+                {item.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <button className='bg-transparent text-white text-2xl cursor-pointer'>
+          {' '}
+        
+          <Palette />
+        </button>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+
+    --primary: oklch(0.795 0.184 86.047);
+  --primary-foreground: oklch(0.421 0.095 57.708);
+  
+  --ring: oklch(0.795 0.184 86.047);
+
+    --sidebar-primary: oklch(0.795 0.184 86.047);
+  --sidebar-primary-foreground: oklch(0.421 0.095 57.708);
+
+    --sidebar-ring: oklch(0.795 0.184 86.047);
+
