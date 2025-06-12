@@ -15,7 +15,7 @@ import { Separator } from '@/components/ui/separator';
 import {
   Tooltip,
   TooltipContent,
-  TooltipProvider,
+
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
@@ -99,9 +99,11 @@ const DATA = {
 export default function FloatingNav() {
  
   return (
+    // <div className='fixed inset-x-0 bottom-8 flex justify-center z-50'>
     <div className='fixed inset-x-0 bottom-8 flex justify-center z-50'>
-      <TooltipProvider>
-        <Dock direction='middle'>
+
+    
+        <Dock direction='middle' >
           {DATA.navbar.map(item => (
             <DockIcon key={item.label}>
               <Tooltip>
@@ -152,7 +154,7 @@ export default function FloatingNav() {
              <ThemeProvider  />
           </DockIcon>
         </Dock>
-      </TooltipProvider>
+  
     </div>
   );
 }

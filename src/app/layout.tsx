@@ -29,8 +29,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${montserrat.variable} ${poppins.variable} montserrat antialiased`}
+        className={`${montserrat.variable} ${poppins.variable} montserrat antialiased `}
       >
+             
         {children}
       </body>
     </html>

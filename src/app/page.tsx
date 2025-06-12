@@ -1,14 +1,14 @@
-// import { ScrollArea } from '@/components/ui/scroll-area';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import Header from '@/components/header/Header';
 import FloatingNav from '@/components/navbar/FlotingNav';
 import ScrollBarNav from '@/components/scrollBar/ScrollBar';
 import About from '@/components/about/About';
 function Home() {
   return (
-    <div>
-    
+    <ScrollArea >
         <ScrollBarNav />
-        <FloatingNav />
+       <FloatingNav />
+    
         <Header />
         <About />
         <div className='container'>
@@ -125,7 +125,7 @@ function Home() {
           officia dolorem expedita a nihil id quam ipsa et aspernatur non.
         </div>
    
-    </div>
+    </ScrollArea>
   );
 }
 

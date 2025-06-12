@@ -51,17 +51,7 @@
   /* GENERAL TRANSITION VARIABLE */
   --transition: all 500ms ease;
   --animate-shine: shine var(--duration) infinite linear;
-  @keyframes shine {
-  0% {
-    background-position: 0% 0%;
-    }
-  50% {
-    background-position: 100% 100%;
-    }
-  to {
-    background-position: 0% 0%;
-    }
-  }
+
 }
 
 :root {
@@ -111,6 +101,8 @@ html {
     @apply bg-background text-foreground;
   }
 
+
+
   h1,
   h2,
   h3,
@@ -158,6 +150,7 @@ html {
   .poppins {
     font-family: var(--font-poppins);
   }
+ 
 }
 
 .container {
@@ -165,6 +158,18 @@ html {
   margin-inline: auto;
   max-width: 1920px;
 }
+
+  @keyframes shine {
+  0% {
+    background-position: 0% 0%;
+    }
+  50% {
+    background-position: 100% 100%;
+    }
+  to {
+    background-position: 0% 0%;
+    }
+  }
 
 /* MEDIA QUERIES (tablets) */
 @media screen and (max-width: 1024px) {
@@ -217,11 +222,3 @@ html {
   }
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
