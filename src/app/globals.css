@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -42,16 +42,26 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
- /* GENERAL CONTAINER VARIABLES */
+  /* GENERAL CONTAINER VARIABLES */
   --container-width-lg: 76%;
   --container-width-md: 90%;
 
-    --primary-hue: 270;
+  --primary-hue: 270;
 
   /* GENERAL TRANSITION VARIABLE */
   --transition: all 500ms ease;
-
-
+  --animate-shine: shine var(--duration) infinite linear;
+  @keyframes shine {
+  0% {
+    background-position: 0% 0%;
+    }
+  50% {
+    background-position: 100% 100%;
+    }
+  to {
+    background-position: 0% 0%;
+    }
+  }
 }
 
 :root {
@@ -89,18 +99,16 @@
   --sidebar-ring: oklch(0.705 0.213 47.604);
 }
 
-
-/* html {
+html {
   scroll-behavior: smooth;
 }
- */
 
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground ;
+    @apply bg-background text-foreground;
   }
 
   h1,
@@ -125,7 +133,7 @@
   }
   h4 {
     font-size: 1.5rem;
-    @apply font-medium ;
+    @apply font-medium;
   }
   h5 {
     font-size: 1.25rem;
@@ -136,13 +144,13 @@
     @apply font-light;
   }
 
-  p{ 
+  p {
     @apply font-normal;
   }
 
-   .btn {
-  @apply inline-flex items-center gap-4 bg-gray-100 text-black px-10 py-2.5 border-2 border-transparent rounded-lg cursor-pointer transition hover:bg-transparent hover:border-gray-100 hover:-translate-y-2
- }
+  .btn {
+    @apply bg-primary text-primary-foreground text-sm md:text-base inline-flex items-center gap-4 px-5 py-1  md:px-10 md:py-2.5 border-2 border-transparent rounded-lg cursor-pointer transition hover:bg-transparent hover:border-gray-100 hover:-translate-y-2;
+  }
 
   .montserrat {
     font-family: var(--font-montserrat);
@@ -150,38 +158,13 @@
   .poppins {
     font-family: var(--font-poppins);
   }
-  .container {
+}
+
+.container {
   width: var(--container-width-lg);
   margin-inline: auto;
   max-width: 1920px;
- }
-
-
 }
-
-
-/* styles/globals.css */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #a0aec0;
-  border-radius: 10px;
-  border: 2px solid transparent;
-  background-clip: content-box;
-}
-
-/* Firefox support */
-.custom-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: #a0aec0 transparent;
-}
-
 
 /* MEDIA QUERIES (tablets) */
 @media screen and (max-width: 1024px) {
@@ -234,4 +217,11 @@
   }
 }
 
-
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

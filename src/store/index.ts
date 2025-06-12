@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
-import {  persist } from 'zustand/middleware';
+import { persist } from 'zustand/middleware';
 import { themes } from '@/static/themes.static';
 
 export type ThemeNameType = keyof typeof themes.colors;
@@ -20,10 +20,13 @@ export const useThemeStore = create<ThemeStoreType>()(
       setHydrated() {
         set({ hydrated: true });
       },
-   
+
       setTheme: (color: ThemeNameType) => {
         set({ theme: color });
-
+        
+        console.log("color ",color);
+       
+        
         const { primaryKey, foregroundKey, colors } = themes;
         const { primary, foreground } = colors[color];
 
@@ -36,14 +39,14 @@ export const useThemeStore = create<ThemeStoreType>()(
 
       },
     })),
- 
-        {
+
+    {
       name: 'ronydas-portfolio',
       onRehydrateStorage() {
         return (state, error) => {
           if (!error) state?.setTheme(state.theme as ThemeNameType);
         };
       },
-    }
+    },
   ),
 );

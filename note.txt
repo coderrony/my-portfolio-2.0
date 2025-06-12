@@ -1,56 +1,65 @@
-import "./navbar.css";
-
+'use client';
+import { motion } from 'framer-motion';
 import { FC } from 'react';
-import logo from '@/assets/images/logo.png';
-import Link from 'next/link';
-import { NAVIGATION_DATA } from '@/static/nav.static';
-import Image from 'next/image';
-import { Palette } from 'lucide-react';
 
-interface NavbarProps {
+interface HeaderContentProps {
   className?: string;
 }
 
-const Navbar: FC<NavbarProps> = () => {
+const HeaderContent: FC<HeaderContentProps> = () => {
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <nav>
-      <div className="container nav__container">
-        <Link href='/' >
-          <Image src={logo} alt='logo' className='w-10 rounded-full overflow-hidden' />
-        </Link>
-        <ul className='flex gap-3.5'>
-          {NAVIGATION_DATA.map(item => (
-            <li key={item.id}>
-   
-              <Link
-                href={item.href}
-               
-              >
-                {item.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <button className='bg-transparent text-white text-2xl cursor-pointer'>
-          {' '}
-        
-          <Palette />
-        </button>
-      </div>
-    </nav>
+    <div className="flex h-full absolute inset-10 sm:inset-20 md:inset-32 flex-col items-center justify-center transition-all duration-300 ease-in-out bg-gradient-to-br from-blue-900/70 via-purple-900/60 to-black/80 rounded-3xl shadow-2xl">
+      <motion.h3
+        className="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg mb-2"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        transition={{ duration: 1, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        Rony Das
+      </motion.h3>
+
+      <motion.p
+        className="w-[35rem] max-w-full px-8 md:px-10 text-center my-3 text-lg md:text-xl text-gray-200 font-medium drop-shadow-md"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        transition={{ duration: 1, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
+        I&#39;m ready to transform your vision into a modern, mobile-responsive, and
+        highly performant website or web application today. Send me the details.
+      </motion.p>
+
+      <motion.div
+        className="flex items-center gap-5 mb-4 mt-2"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        transition={{ duration: 1, delay: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <a
+          href="#contact"
+          className="btn px-6 py-2 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold shadow-lg hover:scale-105 hover:from-blue-500 hover:to-pink-500 transition-all duration-200"
+        >
+          Let&#39;s Talk
+        </a>
+        <a
+          href="#portfolio"
+          className="btn px-6 py-2 rounded-full bg-white text-black font-bold shadow-lg hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-400 hover:text-white transition-all duration-200"
+        >
+          My Work
+        </a>
+      </motion.div>
+    </div>
   );
 };
 
-export default Navbar;
-
-
-    --primary: oklch(0.795 0.184 86.047);
-  --primary-foreground: oklch(0.421 0.095 57.708);
-  
-  --ring: oklch(0.795 0.184 86.047);
-
-    --sidebar-primary: oklch(0.795 0.184 86.047);
-  --sidebar-primary-foreground: oklch(0.421 0.095 57.708);
-
-    --sidebar-ring: oklch(0.795 0.184 86.047);
-
+export default HeaderContent;
