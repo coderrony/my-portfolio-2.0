@@ -14,7 +14,7 @@ type ThemeStoreType = {
 
 export const useThemeStore = create<ThemeStoreType>()(
   persist(
-    immer((set) => ({
+    immer(set => ({
       theme: 'orange',
       hydrated: false,
       setHydrated() {
@@ -23,10 +23,7 @@ export const useThemeStore = create<ThemeStoreType>()(
 
       setTheme: (color: ThemeNameType) => {
         set({ theme: color });
-        
-        console.log("color ",color);
-       
-        
+
         const { primaryKey, foregroundKey, colors } = themes;
         const { primary, foreground } = colors[color];
 
@@ -36,7 +33,6 @@ export const useThemeStore = create<ThemeStoreType>()(
         foregroundKey.map(item => {
           document.documentElement.style.setProperty(item, foreground);
         });
-
       },
     })),
 

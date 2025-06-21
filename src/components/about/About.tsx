@@ -14,7 +14,7 @@ const About: FC<AboutProps> = () => {
   return (
     <section
       id='about'
-      className='md:py-10 bg-gradient-to-br from-white via-blue-50 to-primary/10'
+      className='md:py-8 bg-gradient-to-br from-white via-blue-50 to-primary/10'
     >
       <div className='container mx-auto grid grid-cols-1 lg:grid-cols-[35%_53%] gap-20 items-center'>
         {/* Image Section */}
@@ -43,7 +43,7 @@ const About: FC<AboutProps> = () => {
                 <BookUser />
               </span>
               <h5 className='text-lg font-semibold'>Projects</h5>
-              <small className='text-sm opacity-80'>50+ Completed</small>
+              <small className='text-sm opacity-80'>25+ Completed</small>
               <BorderBeam duration={8} size={200} />
             </div>
 
@@ -51,8 +51,8 @@ const About: FC<AboutProps> = () => {
               <span className='flex justify-center items-center text-3xl mb-3 bg-primary/10 rounded-full p-3'>
                 <Award />
               </span>
-              <h5 className='text-lg font-semibold'>Experience</h5>
-              <small className='text-sm opacity-80'>2+ Years Working</small>
+              <h5 className='text-lg font-semibold'>Practical Experience</h5>
+              <small className='text-sm opacity-80'>Building Real Projects</small>
               <BorderBeam duration={8} size={300} />
             </div>
           </div>
@@ -75,7 +75,7 @@ const About: FC<AboutProps> = () => {
 
           <div className='flex justify-center lg:justify-start'>
             <Link
-              href='https://drive.google.com/file/d/1VPC0OiigxGSmhBpTVghYIsQ_wGAQotSO/view?usp=drive_link'
+              href={process.env.MY_RESUME!}
               target="_blank"
               rel="noopener noreferrer"
               className='inline-flex items-center gap-2 px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary/90 transition-all duration-200 text-lg'

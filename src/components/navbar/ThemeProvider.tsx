@@ -21,8 +21,6 @@ function ThemeProvider() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-     
-
         <span
           className={cn(
             buttonVariants({ variant: 'ghost', size: 'icon' }),
@@ -33,17 +31,16 @@ function ThemeProvider() {
         </span>
       </DialogTrigger>
 
-      <DialogContent className='max-w-xs rounded-xl shadow-lg bg-gradient-to-br from-primary to-secondary'>
+      <DialogContent className='md:max-w-sm rounded-xl shadow-lg bg-gradient-to-br from-primary to-secondary'>
         <DialogHeader>
-          <DialogTitle className='text-lg text-primary-foreground font-bold text-center mb-2'>
+          <DialogTitle className=' text-2xl text-primary-foreground font-bold text-center mb-2'>
             Choose Theme Color
           </DialogTitle>
           <DialogDescription className='text-center mb-4'>
             <span className='text-muted-foreground'>
               Personalize your experience
             </span>
-          </DialogDescription>
-          <div className='flex justify-center gap-5 mt-2'>
+                  <div className='flex justify-center gap-5 mt-2'>
             {(themeColors as ThemeNameType[]).map(color => (
               <Tooltip key={color}>
                 <TooltipTrigger
@@ -60,8 +57,12 @@ function ThemeProvider() {
               </Tooltip>
             ))}
           </div>
+          </DialogDescription>
+    
         </DialogHeader>
       </DialogContent>
+
+
     </Dialog>
   );
 }

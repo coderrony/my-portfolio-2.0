@@ -70,24 +70,24 @@ export const Icons = {
 const DATA = {
   navbar: [
     { href: '#home', icon: HomeIcon, label: 'Home' },
-    { href: '#', icon: BriefcaseBusiness, label: 'Project' },
-    { href: '#', icon: MessageCircleMore, label: 'Contact' },
+    { href: '#myWork', icon: BriefcaseBusiness, label: 'Project' },
+    { href: '#contact', icon: MessageCircleMore, label: 'Contact' },
   ],
   contact: {
     social: {
       GitHub: {
         name: 'GitHub',
-        url: '#',
+        url: `${process.env.MY_GITHUB}`,
         icon: Icons.github,
       },
       LinkedIn: {
         name: 'LinkedIn',
-        url: '#',
+        url: `${process.env.MY_LINKEDIN}`,
         icon: Icons.linkedin,
       },
       Facebook: {
         name: 'Facebook',
-        url: '#',
+        url:`${process.env.MY_FACEBOOK_PROFILE}`,
         icon: Icons.facebook,
       },
     },
@@ -130,16 +130,17 @@ export default function FloatingNav() {
             <DockIcon key={name}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Link
+                  <a
                     href={social.url}
                     aria-label={social.name}
+                    target='_blank'
                     className={cn(
                       buttonVariants({ variant: 'ghost', size: 'icon' }),
                       'size-12 rounded-full hover:bg-primary hover:text-primary-foreground',
                     )}
                   >
                     <social.icon className='size-4' />
-                  </Link>
+                  </a>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>{name}</p>

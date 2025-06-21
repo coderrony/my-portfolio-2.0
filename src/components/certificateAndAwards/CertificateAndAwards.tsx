@@ -1,6 +1,8 @@
 'use client';
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 import Image from 'next/image';
+import Autoplay from 'embla-carousel-autoplay';
+
 import {
   Carousel,
   CarouselContent,
@@ -15,10 +17,12 @@ interface CertificateAndAwardsProps {
 }
 
 const CertificateAndAwards: FC<CertificateAndAwardsProps> = ({ className }) => {
+  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+
   return (
     <section
       id='CertificateAndAwards'
-      className='relative bg-white/80 overflow-hidden pb-50'
+      className='relative md:py-8 bg-white/80 overflow-hidden '
     >
       {/* Blurred gradient blobs */}
       <div className='absolute -top-32 -left-32 w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 opacity-30 rounded-full blur-3xl pointer-events-none z-0' />
@@ -29,15 +33,18 @@ const CertificateAndAwards: FC<CertificateAndAwardsProps> = ({ className }) => {
           className || ''
         }`}
       >
-        <h1 className='text-3xl sm:text-4xl font-extrabold text-center bg-clip-text bg-gradient-to-r from-blue-700 via-purple-700 to-pink-600 text-transparent drop-shadow mb-8'>
+        <h2 className='text-3xl sm:text-4xl font-extrabold text-primary text-center tracking-tight drop-shadow-lg'>
           Certificates & Awards
-        </h1>
+        </h2>
 
-        <Carousel className='w-full max-w-xl mx-auto'>
-          <CarouselContent>
+        <Carousel
+          plugins={[plugin.current]}
+          className='w-full max-w-xs sm:max-w-xl mx-auto'
+        >
+          <CarouselContent className='p-5'>
             {awardsInfo.map(item => (
               <CarouselItem key={item.id} className='flex justify-center'>
-                <div className='relative bg-white/70 dark:bg-neutral-900/70 backdrop-blur-lg border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-xl p-6 w-full max-w-md flex flex-col items-center transition-transform hover:scale-[1.02]'>
+                <div className='relative    rounded-xl shadow-xl p-6 w-full max-w-md flex flex-col items-center transition-transform hover:scale-[1.02]'>
                   {item.image && (
                     <div className='w-w-36 h-36 mb-4 rounded-xl overflow-hidden shadow-lg   '>
                       <a href={item.link} target='_blank'>
@@ -50,10 +57,10 @@ const CertificateAndAwards: FC<CertificateAndAwardsProps> = ({ className }) => {
                       </a>
                     </div>
                   )}
-                  <h2 className='text-xl font-bold text-center mb-1 text-neutral-900 dark:text-neutral-100'>
+                  <h4 className=' sm:text-xl font-bold text-center mb-1 text-neutral-900 '>
                     {item.title}
-                  </h2>
-                  <div className='text-sm text-neutral-600 dark:text-neutral-300 mb-2 text-center'>
+                  </h4>
+                  <div className='text-xs sm:text-sm text-neutral-600  mb-2 text-center'>
                     <span className='font-semibold'>{item.issuer}</span>
                     {' • '}
                     <span>{item.date}</span>
@@ -68,7 +75,7 @@ const CertificateAndAwards: FC<CertificateAndAwardsProps> = ({ className }) => {
                       href={item.link}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold shadow hover:from-blue-600 hover:to-purple-600 transition'
+                      className='inline-block px-2 py-1 sm:px-4 sm:py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm sm:text-base font-bold sm:font-semibold shadow hover:from-blue-600 hover:to-purple-600 transition'
                     >
                       View Certificate
                     </a>

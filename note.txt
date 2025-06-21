@@ -1,65 +1,98 @@
-'use client';
-import { motion } from 'framer-motion';
-import { FC } from 'react';
+// ProjectDetails.tsx
+"use client";
 
-interface HeaderContentProps {
+import { FC } from "react";
+import Image, { StaticImageData } from "next/image";
+import { ProjectType } from "./data";
+import { ScrollArea } from "../ui/scroll-area";
+
+interface ProjectDetailsProps {
+  project: ProjectType;
   className?: string;
 }
 
-const HeaderContent: FC<HeaderContentProps> = () => {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-  };
+const badgeColors: Record<string, string> = {
+  frontend: "bg-blue-100 text-blue-700",
+  backend: "bg-green-100 text-green-700",
+  fullstack: "bg-purple-100 text-purple-700",
+};
 
+const ProjectDetails: FC<ProjectDetailsProps> = ({ project, className }) => {
   return (
-    <div className="flex h-full absolute inset-10 sm:inset-20 md:inset-32 flex-col items-center justify-center transition-all duration-300 ease-in-out bg-gradient-to-br from-blue-900/70 via-purple-900/60 to-black/80 rounded-3xl shadow-2xl">
-      <motion.h3
-        className="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg mb-2"
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        transition={{ duration: 1, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        Rony Das
-      </motion.h3>
-
-      <motion.p
-        className="w-[35rem] max-w-full px-8 md:px-10 text-center my-3 text-lg md:text-xl text-gray-200 font-medium drop-shadow-md"
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        transition={{ duration: 1, delay: 0.4 }}
-        viewport={{ once: true }}
-      >
-        I&#39;m ready to transform your vision into a modern, mobile-responsive, and
-        highly performant website or web application today. Send me the details.
-      </motion.p>
-
-      <motion.div
-        className="flex items-center gap-5 mb-4 mt-2"
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        transition={{ duration: 1, delay: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <a
-          href="#contact"
-          className="btn px-6 py-2 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold shadow-lg hover:scale-105 hover:from-blue-500 hover:to-pink-500 transition-all duration-200"
+    <ScrollArea
+      className={`max-h-[80vh] max-w-screen  scroll-smooth mx-auto  p-6 space-y-6 ${className || ""}`}
+    >
+      <div className="flex items-center gap-4">
+        <Image
+          src={project.icon}
+          alt={project.category}
+          width={40}
+          height={40}
+          className="rounded"
+        />
+        <span
+          className={`px-3 py-1 rounded-full text-xs font-semibold ${
+            badgeColors[project.category] || "bg-gray-100 text-gray-700"
+          }`}
         >
-          Let&#39;s Talk
-        </a>
-        <a
-          href="#portfolio"
-          className="btn px-6 py-2 rounded-full bg-white text-black font-bold shadow-lg hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-400 hover:text-white transition-all duration-200"
-        >
-          My Work
-        </a>
-      </motion.div>
-    </div>
+          {project.category.toUpperCase()}
+        </span>
+      </div>
+      <h2 className="text-xl md:text-2xl font-bold text-gray-800">{project.title}</h2>
+    
+      {project.image && project.image.length > 0 && (
+        <div className="flex gap-4 flex-wrap my-4">
+          {project.image.map((img, idx) => (
+            <Image
+              key={idx}
+              src={img as StaticImageData}
+              alt={project.title}
+              width={320}
+              height={180}
+              className="rounded-lg border shadow-md"
+            />
+          ))}
+        </div>
+      )}
+      {project.video && (
+        <div className="aspect-video w-full">
+          <iframe
+            src={project.video.replace("youtu.be/", "www.youtube.com/embed/").replace("?si=", "?si=")}
+            title={project.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-64 rounded-lg border shadow-sm"
+          />
+        </div>
+      )}
+
+        <p className="text-gray-700 text-sm leading-relaxed">
+        {project.desc}
+      </p>
+      <div className="flex flex-wrap gap-4 mt-4">
+        {project.demo && (
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+          >
+            Live Demo
+          </a>
+        )}
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition"
+          >
+            GitHub
+          </a>
+        )}
+      </div>
+    </ScrollArea>
   );
 };
 
-export default HeaderContent;
+export default ProjectDetails;

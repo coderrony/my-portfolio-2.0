@@ -51,7 +51,7 @@ const HeaderContent: FC<HeaderContentProps> = () => {
         >
           Let&#39;s Talk
         </a>
-        <a href='#portfolio' className='btn bg-gray-200 text-black'>
+        <a href='#myWork' className='btn bg-gray-200 text-black'>
           My Work
         </a>
       </motion.div>
