@@ -32,9 +32,10 @@ const HeaderContent: FC<HeaderContentProps> = () => {
         transition={{ duration: 1, delay: 0.4 }}
         viewport={{ once: true }}
       >
-        I&#39;m ready to transform your vision into a modern, mobile-responsive,
-        and highly performant website or web application today. Send me the
-        details.
+        As a Full-Stack Web Developer, I specialize in building scalable and
+        real-time web applications with modern design and clean, maintainable
+        code. Let’s turn your ideas into fast, responsive, and high-performing
+        solutions.
       </motion.p>
 
       <motion.div

@@ -52,22 +52,56 @@ const About: FC<AboutProps> = () => {
                 <Award />
               </span>
               <h5 className='text-lg font-semibold'>Practical Experience</h5>
-              <small className='text-sm opacity-80'>Building Real Projects</small>
+              <small className='text-sm opacity-80'>
+                Building Real Projects
+              </small>
               <BorderBeam duration={8} size={300} />
             </div>
           </div>
           <div className='relative'>
-            <p className='text-lg leading-relaxed text-gray-700 bg-white/70 rounded p-6 shadow-sm'>
-              Hi, I&#39;m{' '}
-              <span className='font-bold text-primary'>Rony Das</span>, a
-              passionate Web Developer since 2019. I specialize in{' '}
-              <span className='font-semibold'>
-                React, Next.js, JavaScript, Python, Django
-              </span>{' '}
-              and more. My priority is to get your business online the right
-              way, with industry-standard design and all the functionality you
-              need. Let&#39;s connect and bring your project to life! See my
-              resume below.
+            <p className='relative mt-4 bg-gradient-to-br from-white/90 via-blue-50/80 to-primary/10 border border-primary/20 rounded-xl shadow-lg p-6 lg:p-8 text-sm lg:text-base leading-relaxed text-gray-800 backdrop-blur-md transition-all duration-300 hover:shadow-primary/40'>
+              <span className='block text-xl lg:text-2xl font-bold text-primary mb-2'>
+                👋 Hi, I&apos;m{' '}
+                <span className='text-primary font-extrabold'>Rony Das</span>{' '}
+                <span className='text-base text-gray-500 font-medium'>
+                  (26 y/o)
+                </span>
+              </span>
+              <span className='block mb-3 text-gray-600 italic'>
+                Passionate about building real-time, scalable web applications.
+              </span>
+              <span className='block mb-3'>
+                My programming journey began in{' '}
+                <span className='font-semibold text-primary'>2019</span>,
+                sparked by curiosity about real-time systems in stock markets
+                and trading. This fascination led me to explore how such robust
+                applications are engineered.
+              </span>
+              <span className='block mb-3'>
+                I started with{' '}
+                <span className='font-semibold text-blue-700'>C</span> and{' '}
+                <span className='font-semibold text-blue-700'>C++</span>, then
+                joined{' '}
+                <span className='font-semibold text-primary'>
+                  CSE Fundamentals with Phitron
+                </span>{' '}
+                to master problem-solving, logic, and data structures. I honed
+                my skills through countless problems on online judges and
+                participated in various courses and bootcamps.
+              </span>
+              <span className='block mb-3'>
+                With a solid foundation, I transitioned to development, building
+                both real-world and practice projects. Currently, I’m focused on{' '}
+                <span className='font-semibold text-primary'>
+                  system design
+                </span>{' '}
+                and scalable architectures.
+              </span>
+              <span className='block'>
+                I thrive on challenging projects and am quick to adapt to any
+                tech stack.<span className='font-semibold text-primary'> My goal is to make meaningful contributions to every
+                team I join. </span>
+              </span>
             </p>
 
             <ShineBorder shineColor={['#A07CFE', '#FE8FB5', '#FFBE7B']} />
@@ -76,8 +110,8 @@ const About: FC<AboutProps> = () => {
           <div className='flex justify-center lg:justify-start'>
             <Link
               href={process.env.MY_RESUME!}
-              target="_blank"
-              rel="noopener noreferrer"
+              target='_blank'
+              rel='noopener noreferrer'
               className='inline-flex items-center gap-2 px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary/90 transition-all duration-200 text-lg'
             >
               My Resume <Eye size={20} />
