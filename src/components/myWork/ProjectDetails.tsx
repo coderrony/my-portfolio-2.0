@@ -84,9 +84,9 @@ const ProjectDetails: FC<ProjectDetailsProps> = ({ project, className }) => {
       )}
 
       <div className='flex flex-wrap gap-4 mt-6'>
-        {project.demo && (
+        {project.live && (
           <Link
-            href={project.demo}
+            href={project.live}
             target='_blank'
             rel='noopener noreferrer'
             className='inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg shadow-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-200 group'
@@ -104,7 +104,7 @@ const ProjectDetails: FC<ProjectDetailsProps> = ({ project, className }) => {
                 d='M14 5l7 7m0 0l-7 7m7-7H3'
               />
             </svg>
-            Live Demo
+            Live live
           </Link>
         )}
         {project.github && (

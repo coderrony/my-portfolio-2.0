@@ -1,98 +1,69 @@
-// ProjectDetails.tsx
-"use client";
 
-import { FC } from "react";
-import Image, { StaticImageData } from "next/image";
-import { ProjectType } from "./data";
-import { ScrollArea } from "../ui/scroll-area";
 
-interface ProjectDetailsProps {
-  project: ProjectType;
-  className?: string;
-}
 
-const badgeColors: Record<string, string> = {
-  frontend: "bg-blue-100 text-blue-700",
-  backend: "bg-green-100 text-green-700",
-  fullstack: "bg-purple-100 text-purple-700",
-};
+My name is Rony Das, and I’m 26 years old.
+I began my programming journey in 2019, driven by curiosity about how real-time applications — especially those used in stock markets and trading — work. This interest led me to explore how such systems are built.
 
-const ProjectDetails: FC<ProjectDetailsProps> = ({ project, className }) => {
-  return (
-    <ScrollArea
-      className={`max-h-[80vh] max-w-screen  scroll-smooth mx-auto  p-6 space-y-6 ${className || ""}`}
-    >
-      <div className="flex items-center gap-4">
-        <Image
-          src={project.icon}
-          alt={project.category}
-          width={40}
-          height={40}
-          className="rounded"
-        />
-        <span
-          className={`px-3 py-1 rounded-full text-xs font-semibold ${
-            badgeColors[project.category] || "bg-gray-100 text-gray-700"
-          }`}
-        >
-          {project.category.toUpperCase()}
-        </span>
-      </div>
-      <h2 className="text-xl md:text-2xl font-bold text-gray-800">{project.title}</h2>
+I started learning C and C++, which were my first programming languages. To build a strong foundation, I joined the CSE Fundamentals with Phitron, where I focused on problem-solving, logic building, and data structures and algorithms (DSA). I dedicated significant time to solving problems on various online judges. Additionally, I joined numerous online courses and bootcamps.
+
+After strengthening my core skills, I transitioned into development and built several real-world and practice projects. Currently, I’m focusing on system design and deepening my understanding of scalable architectures.
+
+I'm always eager for opportunities to work on challenging projects. I am confident in my ability to quickly adapt to any technology stack and make effective contributions to a team.
+
+
+
+-------------------
+
+I build scalable, real-time web applications with clean code and modern design. Let’s bring your vision to life—fast, responsive, and performance-driven.
+
+---------
+
+const data: ProjectType[] = [
+  {
+    id: 1,
+    category: 'frontend',
+    icon: frontendImg,
+    image: [BlogifyImg, BlogifyImg, BlogifyImg, BlogifyImg],
+    video: 'https://youtu.be/N4_nFQ81ZyU?si=XQj0h9PrwZL8YusP',
+    title: 'React Blogify (Frontend)',
+    slug: 'react-blogify-frontend',
+    desc: 'a Blog application with integrate backend api.in this hole project i implement Infinite Scroll,Reusable Components,Concerned About File Structure, and more',
+    demo: 'https://662cb448cd933ba38b0a3de8--cosmic-profiterole-c1eaa5.netlify.app/',
+    github:
+      'https://github.com/coderrony/learn_with_sumit_reactive_accelerator_course_assignment/tree/master/05_React_Blogify',
+  },
+  {
+    id: 2,
+    category: 'backend',
+    icon: frontendImg,
+    image: [],
+    title: 'Frontend Bootcamp (Frontend)',
+    slug: 'frontend-bootcamp-frontend',
+    desc: 'simple single-page website for showcasing yourself, your product, or more little business.',
+    content: `        
+##### Node Bookstore
+This application is developed based on the MVC pattern, demonstrating how MVC works in practice. The entire application, including both the frontend and backend, is rendered on a Node.js server. It represents a bookstore where users—depending on their roles (admin or guest)—can add, delete, and update books. Additional features include adding books to a cart, wishlist, and more.
+
+###### Tech Stack
+**Server:** Node, Express,ejs, TailwindCSS
+
+
+##### Features
+- Add To Cart
+- Whitelist
+- Authentication 
+- Role Base Authorization
+
+##### Documentation
+- Adding tailwindcss  utility-first CSS framework that helps build modern and responsive user interfaces efficiently.
+- bcrypt used to hash passwords securely before storing them in the database.
+- Adding [tailwindcss](https://tailwindcss.com/docs/installation/using-postcss) a utility-first CSS framework that helps build modern and responsive user interfaces efficiently.
+
     
-      {project.image && project.image.length > 0 && (
-        <div className="flex gap-4 flex-wrap my-4">
-          {project.image.map((img, idx) => (
-            <Image
-              key={idx}
-              src={img as StaticImageData}
-              alt={project.title}
-              width={320}
-              height={180}
-              className="rounded-lg border shadow-md"
-            />
-          ))}
-        </div>
-      )}
-      {project.video && (
-        <div className="aspect-video w-full">
-          <iframe
-            src={project.video.replace("youtu.be/", "www.youtube.com/embed/").replace("?si=", "?si=")}
-            title={project.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="w-full h-64 rounded-lg border shadow-sm"
-          />
-        </div>
-      )}
+`,
+    demo: 'https://voluble-conkies-e1801e.netlify.app/',
+    github: 'https://github.com/coderrony/Frontend_Bootcamp',
+  },
+]
 
-        <p className="text-gray-700 text-sm leading-relaxed">
-        {project.desc}
-      </p>
-      <div className="flex flex-wrap gap-4 mt-4">
-        {project.demo && (
-          <a
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-          >
-            Live Demo
-          </a>
-        )}
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition"
-          >
-            GitHub
-          </a>
-        )}
-      </div>
-    </ScrollArea>
-  );
-};
 
-export default ProjectDetails;

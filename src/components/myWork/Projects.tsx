@@ -61,9 +61,9 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
               <p className='text-sm text-gray-600 line-clamp-3'>{item.desc}</p>
 
               <div className='flex flex-col md:flex-row justify-between items-stretch sm:items-center pt-4 gap-2'>
-                {item?.demo && (
+                {item?.live && (
                   <Link
-                    href={item.demo}
+                    href={item.live}
                     target='_blank'
                     rel='noopener noreferrer'
                     className='flex items-center gap-1 px-3 py-1 rounded-md bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors text-sm font-medium w-full sm:w-auto justify-center'
@@ -83,7 +83,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
                         strokeLinejoin='round'
                       />
                     </svg>
-                    Live Demo
+                    Live live
                   </Link>
                 )}
                 {item?.github && (
