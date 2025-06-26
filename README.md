@@ -7,10 +7,7 @@ Feel free to clone the repository and customize it with your own information.
 
 Designed for simplicity, scalability, and easy personalization.
 
-**Live Link**
-```bash
-  https://ronydas.dev
-```
+**Live Link:** [www.ronydas.dev](https://ronydas.dev)
 
 ## Run Locally
 Clone the project
