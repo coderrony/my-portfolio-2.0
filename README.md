@@ -7,7 +7,7 @@ Feel free to clone the repository and customize it with your own information.
 
 Designed for simplicity, scalability, and easy personalization.
 
-**Live Link:** [www.ronydas.dev](https://ronydas.dev)
+**Portfolio Link:** [www.ronydas.dev](https://ronydas.dev)
 
 ## Run Locally
 Clone the project
