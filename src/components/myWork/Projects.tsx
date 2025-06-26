@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { Dialog, DialogContent, DialogTrigger } from '../ui/dialog';
 import ProjectDetails from './ProjectDetails';
 
+
 interface ProjectsProps {
   className?: string;
   projects: ProjectType[];
@@ -15,7 +16,7 @@ interface ProjectsProps {
 
 const Projects: FC<ProjectsProps> = ({ projects }) => {
   return (
-    <section className='w-full py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+    <section className='w-full  py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
       <AnimatePresence mode='sync'>
         {projects.map(item => (
           <motion.div
@@ -24,7 +25,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className='bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300'
+            className='bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 '
           >
             <div className='h-48 bg-gray-100 relative'>
               {item.image.length > 0 ? (
@@ -42,7 +43,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
               )}
             </div>
 
-            <div className='p-4 space-y-3'>
+            <div className='p-4 space-y-3 '>
               <div className='flex items-center gap-2'>
                 <Image
                   src={item.icon}
@@ -139,6 +140,8 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
                 </Dialog>
               </div>
             </div>
+
+
           </motion.div>
         ))}
       </AnimatePresence>

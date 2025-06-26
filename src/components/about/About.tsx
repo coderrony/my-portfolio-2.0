@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { Award, BookUser, Eye } from 'lucide-react';
+// import { Award, BookUser, Eye } from 'lucide-react';
+import {  Eye } from 'lucide-react';
 import Image from 'next/image';
 
 import myImg2 from '@/assets/my-image/without-bg.png';
@@ -37,7 +38,7 @@ const About: FC<AboutProps> = () => {
             About Me
           </h2>
 
-          <div className='grid grid-cols-2 gap-8'>
+          {/* <div className='grid grid-cols-2 gap-8'>
             <div className='relative flex flex-col items-center p-6 bg-white/80 border border-primary/20 rounded-xl shadow-md hover:bg-primary hover:text-white transition-all duration-300'>
               <span className='flex justify-center items-center text-3xl mb-3 bg-primary/10 rounded-full p-3'>
                 <BookUser />
@@ -57,7 +58,8 @@ const About: FC<AboutProps> = () => {
               </small>
               <BorderBeam duration={8} size={300} />
             </div>
-          </div>
+          </div> */}
+
           <div className='relative'>
             <p className='relative mt-4 bg-gradient-to-br from-white/90 via-blue-50/80 to-primary/10 border border-primary/20 rounded-xl shadow-lg p-6 lg:p-8 text-sm lg:text-base leading-relaxed text-gray-800 backdrop-blur-md transition-all duration-300 hover:shadow-primary/40'>
               <span className='block text-xl lg:text-2xl font-bold text-primary mb-2'>

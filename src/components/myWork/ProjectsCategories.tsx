@@ -2,6 +2,7 @@
 import { FC, useState } from 'react';
 import { motion } from 'motion/react';
 import Image, { StaticImageData } from 'next/image';
+import { BorderBeam } from '@/components/magicui/border-beam';
 
 interface ProjectsCategoriesProps {
   className?: string;
@@ -22,7 +23,7 @@ const ProjectsCategories: FC<ProjectsCategoriesProps> = ({
 
   return (
     <div className={`flex items-center justify-center py-8`}>
-      <ul className='flex flex-wrap w-full gap-4 justify-center items-center rounded-xl shadow-lg px-6 py-3 backdrop-blur-md'>
+      <ul className='flex  flex-wrap w-full gap-4 justify-center items-center rounded-xl shadow-lg px-6 py-3 backdrop-blur-md'>
         {categories.map(item => (
           <motion.li
             key={item.category}
@@ -63,6 +64,7 @@ const ProjectsCategories: FC<ProjectsCategoriesProps> = ({
             </span>
           </motion.li>
         ))}
+         <BorderBeam duration={8} size={120} />
       </ul>
     </div>
   );

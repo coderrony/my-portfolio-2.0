@@ -16,6 +16,7 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 });
 
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ronydas.dev';
 const SEO_DESCRIPTION =
   process.env.MY_SEO_DESCRIPTION ||
@@ -83,8 +84,8 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
     apple: '/favicon.ico',
   },
-  manifest: '/site.webmanifest',
-  themeColor: '#ffffff',
+
+
   robots: {
     index: true,
     follow: true,
