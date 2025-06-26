@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Developer Portfolio – Built with Modern Tools
+I built this portfolio to showcase my skills, projects, and current development workflow.
+Feel free to clone the repository and customize it with your own information.
 
-## Getting Started
+🔧 The codebase is structured and clean, making it easy to understand and extend.
+📁 Don't forget to add your personal configuration in the .env file before running the project.
 
-First, run the development server:
+Designed for simplicity, scalability, and easy personalization.
 
+**Live Link**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  https://ronydas.dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run Locally
+Clone the project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  git clone https://github.com/coderrony/my-portfolio-2.0.git
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Go to the project directory
 
-## Learn More
+```bash
+  cd my-portfolio-2.0
+```
 
-To learn more about Next.js, take a look at the following resources:
+Install dependencies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  npm install
+```
+Create a .env file in the root directory and fill in the values according to .env.example
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+  touch .env
+```
 
-## Deploy on Vercel
+Start the server
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+  npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Run on browser
+
+```bash
+  http://localhost:3000/
+```
